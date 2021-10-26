@@ -1,9 +1,10 @@
-package com.mahila.todolistapp.data
+package com.mahila.todolistapp.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.mahila.todolistapp.data.TaskDao
 import com.mahila.todolistapp.data.model.Task
 
 

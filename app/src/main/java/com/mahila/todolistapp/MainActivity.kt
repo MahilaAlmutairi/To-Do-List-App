@@ -1,15 +1,10 @@
-package com.mahila.todolistapp.ui
+package com.mahila.todolistapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.mahila.todolistapp.R
-import com.mahila.todolistapp.TaskRecycleViewAdapter
+import com.mahila.todolistapp.viewModel.TaskViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
@@ -19,9 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.rvRecycleView)
-
-
-        val mainVm = ViewModelProvider(this).get(MainViewModel::class.java)
+        val taskVm = ViewModelProvider(this).get(TaskViewModel::class.java)
            // val task = Task()
            // mainVm.fillDB(task)
 
@@ -34,4 +27,3 @@ class MainActivity : AppCompatActivity() {
       //  recyclerView.layoutManager = LinearLayoutManager(this)
 
     }
-}

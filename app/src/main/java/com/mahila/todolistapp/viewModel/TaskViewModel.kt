@@ -1,14 +1,14 @@
-package com.mahila.todolistapp.ui
+package com.mahila.todolistapp.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.mahila.todolistapp.data.Repo
+import com.mahila.todolistapp.data.repository.Repo
 import com.mahila.todolistapp.data.model.Task
 import kotlinx.coroutines.launch
 
-class MainViewModel(context: Application) : AndroidViewModel(context) {
+class TaskViewModel(context: Application) : AndroidViewModel(context) {
     private val repo = Repo(context)
 
 
