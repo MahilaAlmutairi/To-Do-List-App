@@ -1,14 +1,14 @@
 package com.mahila.todolistapp.data.database
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
 import com.mahila.todolistapp.data.TaskDao
 import com.mahila.todolistapp.data.model.Task
+import java.util.*
 
 
 @Database(entities = [Task::class], version = 1, exportSchema = false)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract val taskDao: TaskDao
 
@@ -24,5 +24,16 @@ abstract class AppDatabase : RoomDatabase() {
             }
             return INSTANCE
         }
+    }
+}
+class Converters {
+    @TypeConverter
+    fun fromTimestamp(value: Long?): Date? {
+        return value?.let { Date(it) }
+    }
+
+    @TypeConverter
+    fun dateToTimestamp(date: Date?): Long? {
+        return date?.time?.toLong()
     }
 }

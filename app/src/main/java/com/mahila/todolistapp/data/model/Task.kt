@@ -11,8 +11,8 @@ data class Task(
     @PrimaryKey
     val taskId1: Int,
     val taskTitle: String,
-    val taskDueDate: Date?, //or open time  ---------------------*
-    //taskCreationDate, I can getting it directly from the sys.  -------------
-    val taskCreationDate: Date,
-    val taskDescription: String
+    val taskDueDate: Date? = null, //or open time  ---------------------*
+    //maybe without descr.
+    val taskDescription: String?= null,
+    val taskCreationDate: Date =Calendar.getInstance().time
 )
