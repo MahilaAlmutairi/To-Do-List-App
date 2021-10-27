@@ -9,8 +9,8 @@ import com.mahila.todolistapp.data.model.Task
         @Query("SELECT * FROM task_table")
         suspend fun getAll(): List<Task>
 
-        @Query("SELECT * FROM task_table WHERE taskId ==:taskId")
-        suspend fun loadById(taskId: Int): Task
+        @Query("SELECT * FROM task_table WHERE taskId ==:tId")
+        suspend fun loadById(tId: Int): Task
 
        /* @Query("SELECT * FROM task_table WHERE taskTitle LIKE :title AND ")
         fun findByTitle(title: String): Task*/

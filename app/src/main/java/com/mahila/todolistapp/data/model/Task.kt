@@ -6,10 +6,8 @@ import java.util.*
 
 @Entity(tableName = "task_table")
 data class Task(
-
-
     @PrimaryKey
-    val taskId1: Int,
+    val taskId: Int,
     val taskTitle: String,
     val taskDueDate: Date? = null, //or open time  ---------------------*
     //maybe without descr.
