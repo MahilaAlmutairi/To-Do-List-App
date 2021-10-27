@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:padding="12dp"
+    app:layout_constraintCircleRadius="10dp"
+    android:backgroundTint="#C9C5CA">
+
+    <LinearLayout
+        android:id="@+id/L1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.091"
+        tools:layout_editor_absoluteX="9dp">
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="12dp"
+            android:hint="I want to do.."
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="12dp"
+            android:hint="Any more Desc.about your Task.."
+            android:textSize="16sp"
+            android:lines="11"
+            android:gravity="top"/>
+
+        <TextView
+            android:id="@+id/tvTaskDueDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_marginTop="12dp"
+            android:hint="Task Due Date"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/L2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnOk"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="OK" />
+
+            <Button
+                android:id="@+id/btnCan"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

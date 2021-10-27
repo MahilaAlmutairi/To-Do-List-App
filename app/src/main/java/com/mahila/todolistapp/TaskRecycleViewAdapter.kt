@@ -23,8 +23,8 @@ class TaskRecycleViewAdapter(private val taskList: List<Task>) :
         val task = taskList[position]
         holder.taskTitleTV.text = task.taskTitle
 
-        holder.taskDueDateTV.text = "${android.text.format.DateFormat.format("EEEE", task.taskDueDate)}" +
-                " \n${task.taskDueDate?.month.toString()}"
+        holder.taskDueDateTV.text = "${android.text.format.DateFormat.format("E", task.taskDueDate)}" +
+                "\n${android.text.format.DateFormat.format("MMMd", task.taskDueDate)}"
     }
 
     override fun getItemCount(): Int {

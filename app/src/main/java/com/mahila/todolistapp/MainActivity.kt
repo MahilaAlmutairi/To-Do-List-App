@@ -1,5 +1,6 @@
 package com.mahila.todolistapp
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -23,14 +24,15 @@ class MainActivity : AppCompatActivity() {
         addsBtn = findViewById(R.id.addingBtn)
 
         val taskVm = ViewModelProvider(this).get(TaskViewModel::class.java)
-        val task1 = Task(
-            99,
-            "taskTitle",
-            Date(2023, 5, 5),
-            "dddd"
-        )
+       /* val task1 = Task(
+            taskTitle = "taskTitle",
+            taskDueDate = Date(2023, 5, 5),
+            taskDescription = "dddd"
+        )*/
         addsBtn.setOnClickListener {
-            taskVm.fillDB(task1)
+
+            GettingTaskInfoFragment().show(supportFragmentManager, GettingTaskInfoFragment.TAG)
+           // taskVm.fillDB(task1)
             taskVm.getAll().observe(this, Observer {
                 recyclerView.adapter = TaskRecycleViewAdapter(it)
 
