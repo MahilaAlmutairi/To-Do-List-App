@@ -13,7 +13,16 @@ class Repo(context: Context) {
         appDB.taskDao.getAll()
     }
 
-    suspend fun fillDB(task:Task) = withContext(Dispatchers.IO) {
+    suspend fun fillDB(task: Task) = withContext(Dispatchers.IO) {
 
-        appDB.taskDao.insert(task)}
+        appDB.taskDao.insert(task)
+    }
+
+    suspend fun updateTask(task: Task) = withContext(Dispatchers.IO) {
+
+        appDB.taskDao.update(task)
+    }
+    suspend fun deleteTask(task: Task){
+        appDB.taskDao.delete(task)
+    }
 }
