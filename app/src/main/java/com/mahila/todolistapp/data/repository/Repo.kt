@@ -25,4 +25,11 @@ class Repo(context: Context) {
     suspend fun deleteTask(task: Task){
         appDB.taskDao.delete(task)
     }
+    suspend fun restoreDeleted(task: Task){
+        appDB.taskDao.insert(task)
+    }
+    suspend fun switchCompleteTask(task: Task){
+        task.isCompleted=!(task.isCompleted)
+        appDB.taskDao.update(task)
+    }
 }

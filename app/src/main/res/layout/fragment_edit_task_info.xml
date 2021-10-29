@@ -6,7 +6,7 @@
     <data>
         <variable
             name="args1"
-            type="com.mahila.todolistapp.EditTaskInfoFragmentArgs" />
+            type="com.mahila.todolistapp.ui.EditTaskInfoFragmentArgs" />
     </data>
 
     <LinearLayout

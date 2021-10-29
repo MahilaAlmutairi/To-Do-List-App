@@ -1,11 +1,11 @@
-package com.mahila.todolistapp
+package com.mahila.todolistapp.adapter
 
-import android.view.View
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.BindingAdapter
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.mahila.todolistapp.ui.MainFragmentDirections
+import com.mahila.todolistapp.R
 import com.mahila.todolistapp.data.model.Task
 
 class BindingAdapters {

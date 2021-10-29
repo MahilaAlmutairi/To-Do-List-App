@@ -18,7 +18,7 @@ import com.mahila.todolistapp.data.model.Task
         fun findByTitle(title: String): Task*/
         @Update()
         suspend fun update(task: Task)
-        @Insert
+        @Insert(onConflict = OnConflictStrategy.IGNORE)
         suspend fun insert( tasks: Task)
         @Delete
         suspend fun delete(task: Task)

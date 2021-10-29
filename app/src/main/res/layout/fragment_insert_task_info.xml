@@ -10,7 +10,7 @@
     android:padding="12dp"
     app:layout_constraintCircleRadius="10dp"
     android:backgroundTint="#C9C5CA"
-    tools:context=".InsertTaskInfoFragment">
+    tools:context=".ui.InsertTaskInfoFragment">
 
     <LinearLayout
         android:id="@+id/L1"

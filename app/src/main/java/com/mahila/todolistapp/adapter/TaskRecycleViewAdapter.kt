@@ -49,8 +49,8 @@ class TaskRecycleViewAdapter() :
         holder.bind(currentTask)
     }
 
-    fun setData(task: List<Task>) {
-        this.tasksList = task
+    fun setData(tasks: List<Task>) {
+        this.tasksList = tasks
     }
 }
 
