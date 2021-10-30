@@ -10,7 +10,7 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 
 ## :bulb: Motivation and Context
- The chance to make an impact, Finding innovative solutions, and The challenges.
+ The chance to make an impact, Finding innovative solutions, and The fun challenges.
 
 ## :camera_flash: Screenshots
  <img src="add.jpeg" width="260">
