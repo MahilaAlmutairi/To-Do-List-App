@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
-            android:hint="Add a description of your Task..."
+            android:hint="Add a description of your task..."
             android:textSize="16sp"
             android:lines="11"
             android:gravity="top"/>
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
-            android:hint="select due date.."
+            android:hint="Select due date.."
             android:textSize="16sp" />
 
         <LinearLayout
