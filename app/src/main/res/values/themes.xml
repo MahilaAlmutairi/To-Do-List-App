@@ -2,10 +2,10 @@
     <!-- Base application theme. -->
     <style name="Theme.ToDoListApp" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#8D829C</item>
+        <item name="colorPrimary">#3C1C4B</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/darkGray</item>
+        <item name="colorSecondary">#3c1c4b</item>
 
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->

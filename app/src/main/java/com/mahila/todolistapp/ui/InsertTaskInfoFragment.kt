@@ -58,7 +58,7 @@ class InsertTaskInfoFragment : Fragment() {
             // Insert task to Database
             val task1 = Task(
                 taskTitle = binding.etTitle.text.toString(),
-                taskDueDate = date,
+                taskDueDate = date,//need check format
                 taskDescription = binding.etDesc.text.toString()
             )
             taskViewModel.fillDB(task1)

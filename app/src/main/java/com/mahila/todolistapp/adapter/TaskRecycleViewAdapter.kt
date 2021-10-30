@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mahila.todolistapp.data.model.Task
 import com.mahila.todolistapp.databinding.RecycleViewItemBinding
 
+
 class TaskRecycleViewAdapter() :
     RecyclerView.Adapter<TaskRecycleViewAdapter.TaskAdapter>() {
     var tasksList = emptyList<Task>()
@@ -16,14 +17,18 @@ class TaskRecycleViewAdapter() :
 
 
         fun bind(task: Task) {
+
             binding.taskInfo = task
             binding.executePendingBindings()
+
         }
+
 
         companion object {
             fun from(parent: ViewGroup): TaskAdapter {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = RecycleViewItemBinding.inflate(layoutInflater, parent, false)
+
                 return TaskAdapter(
                     binding
                 )
@@ -48,11 +53,14 @@ class TaskRecycleViewAdapter() :
         holder.bind(currentTask)
     }
 
+
     fun setData(tasks: List<Task>) {
-        val toDoDiffUtil = TaskDiffUtil(tasksList, tasks)
-        val toDoDiffResult = DiffUtil.calculateDiff(toDoDiffUtil)
+//
+        val diffUtil = TaskDiffUtil(tasksList, tasks)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
         this.tasksList = tasks
-        toDoDiffResult.dispatchUpdatesTo(this)
+        //
+        diffResult.dispatchUpdatesTo(this)
     }
 }
 

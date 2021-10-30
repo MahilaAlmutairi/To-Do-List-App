@@ -9,10 +9,12 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.mahila.todolistapp.R
 import com.mahila.todolistapp.adapter.SwipeToDeleteOrToComplete
 import com.mahila.todolistapp.adapter.TaskRecycleViewAdapter
 import com.mahila.todolistapp.data.model.Task
 import com.mahila.todolistapp.databinding.FragmentMainBinding
+import com.mahila.todolistapp.databinding.RecycleViewItemBinding
 import com.mahila.todolistapp.viewModel.TaskViewModel
 
 class MainFragment : Fragment() {
@@ -63,6 +65,7 @@ class MainFragment : Fragment() {
                         adapter.notifyItemRemoved(viewHolder.adapterPosition)
                         // Undo Complete task
                         CompleteTaskOrUndo(viewHolder.itemView, swipedTask)
+                      // setImageDone(swipedTask)
                     }
                 }
 
@@ -86,15 +89,22 @@ class MainFragment : Fragment() {
     private fun setupRecyclerview() {
         val recyclerView = binding.rvRecycleView
         recyclerView.adapter = adapter
+        //setImageDone()
         // Swipe to Delete or complete
         swipeToDeleteOrTocomplete(recyclerView)
     }
 
+
     private fun CompleteTaskOrUndo(view: View, completedTask: Task) {
-        val msg=when(completedTask.isCompleted){
-            "Completed"->"Uncompleted"
-            "Uncompleted"->"Completed"
-            else->""
+       /* val msg = when (completedTask.isCompleted) {
+            "Completed" -> "Uncompleted"
+            "Uncompleted" -> "Well Done!"
+            else -> ""
+        }*/
+        val msg = when (completedTask.isCompleted) {
+            false -> "Uncompleted"
+            true -> "Well Done!"
+            else -> ""
         }
         val snackBar = Snackbar.make(
             view, "$msg '${completedTask.taskTitle}'",

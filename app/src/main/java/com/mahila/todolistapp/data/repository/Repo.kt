@@ -29,12 +29,14 @@ class Repo(context: Context) {
         appDB.taskDao.insert(task)
     }
     suspend fun switchCompleteTask(task: Task){
-       // task.isCompleted=!(task.isCompleted) when Was boolean
-        task.isCompleted=when(task.isCompleted){
+        task.isCompleted=!(task.isCompleted)
+        //when Was boolean
+     /*   task.isCompleted=when(task.isCompleted){
             "Uncompleted"->"Completed"
             "Completed"-> "Uncompleted"
             else -> ""
-        }
+        }*/
+
         appDB.taskDao.update(task)
     }
 }

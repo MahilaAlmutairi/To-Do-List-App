@@ -16,10 +16,11 @@
             android:layout_marginBottom="24dp"
             android:clickable="true"
             android:focusable="true"
+            app:backgroundTint="#3c1c4b"
             android:navigateToInsertTaskInfoFragment="@{true}"
             android:src="@drawable/icon_add"
             android:tint="@color/white"
-            android:backgroundTint="@color/darkGray"
+            android:backgroundTint="#3c1c4b"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

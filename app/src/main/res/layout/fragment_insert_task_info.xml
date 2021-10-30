@@ -66,8 +66,9 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:backgroundTint="@color/darkGray"
+                android:backgroundTint="#3c1c4b"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 android:text="OK" />
 
             <Button
@@ -75,7 +76,8 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:backgroundTint="@color/darkGray"
+                android:backgroundTint="#3c1c4b"
+                android:textStyle="bold"
                 android:textColor="@color/white"
                 android:text="Cancel" />
         </LinearLayout>

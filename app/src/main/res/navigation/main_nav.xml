@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.mahila.todolistapp.ui.MainFragment"
-        android:label="MainFragment"
+        android:label="Tasks"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_insertTaskInfoFragment"
@@ -45,7 +45,7 @@
     <fragment
         android:id="@+id/editTaskInfoFragment"
         android:name="com.mahila.todolistapp.ui.EditTaskInfoFragment"
-        android:label="fragment_edit_task_info"
+        android:label="Edit"
         tools:layout="@layout/fragment_edit_task_info">
         <action
             android:id="@+id/action_editTaskInfoFragment_to_mainFragment"

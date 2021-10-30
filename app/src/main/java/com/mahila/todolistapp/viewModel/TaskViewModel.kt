@@ -49,20 +49,4 @@ class TaskViewModel(context: Application) : AndroidViewModel(context) {
         }
     }
 }
-/*
-# Put title of your app here
 
-<!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
-<!--- You can find both of these in the url bar when you open your repository in github. -->
-
-
-## :scroll: Description
-This is my my application description, what you have learned and what you, and what the ideas you have added in this app
-
-
-## :bulb: Motivation and Context
-Write your motivation here
-
-
-## :camera_flash: Screenshots
-<img src="/results/screenshot_1.png" width="260">&emsp;<img src="/results/screenshot_2.png" width="260">*/
