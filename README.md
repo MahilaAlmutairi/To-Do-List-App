@@ -14,7 +14,7 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 
 ## :camera_flash: Screenshots
- ![](screenshot/add.png)
+ ![](screenshot\add.png)
  <img src="screenshot/add_page.png" width="260">
  <img src="screenshot/Task_page.png" width="260">
  <img src="screenshot/taskInfo_page.png" width="260">
