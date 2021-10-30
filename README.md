@@ -5,7 +5,7 @@ In my app:\
 The to-do list is persistent for the user, She/He is able to add, delete and edit tasks. 
 Also, no data is lost if the user terminates and relaunches the application, or if the user reboots their device.
 The user is able to switch between the state of the task (completed/uncompleted) by swiping to Right. and She/He is able to Undo that.
-The user is able to switch between the state of the task (completed/uncompleted) by swiping to Right. and She/He is able to Undo that.
+The user is able to delete the task by swiping to Left. and She/He is able to Undo that.
 Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, and Coroutines libraries, and learned how to use the data-binding library on my Android app.
 
 
