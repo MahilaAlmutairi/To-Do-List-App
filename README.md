@@ -14,10 +14,10 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 
 ## :camera_flash: Screenshots
- <img src="screenshot/add.jpeg" width="260">
- <img src="screenshot/add_page.jpeg" width="260">
- <img src="screenshot/Task_page.jpeg" width="260">
- <img src="screenshot/taskInfo_page.jpeg" width="260">
- <img src="screenshot/taskInfo_page2.jpeg" width="260">
- <img src="screenshot/update.jpeg" width="260">
- <img src="screenshot/delete_dialog.jpeg" width="260">
+ <img src="add.jpeg" width="260">
+ <img src="add_page.jpeg" width="260">
+ <img src="Task_page.jpeg" width="260">
+ <img src="taskInfo_page.jpeg" width="260">
+ <img src="taskInfo_page2.jpeg" width="260">
+ <img src="update.jpeg" width="260">
+ <img src="delete_dialog.jpeg" width="260">
