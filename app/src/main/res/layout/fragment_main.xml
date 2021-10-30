@@ -19,6 +19,7 @@
             android:navigateToInsertTaskInfoFragment="@{true}"
             android:src="@drawable/icon_add"
             android:tint="@color/white"
+            android:backgroundTint="@color/darkGray"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

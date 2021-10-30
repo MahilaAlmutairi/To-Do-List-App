@@ -62,7 +62,7 @@ class MainFragment : Fragment() {
                         taskViewModel.switchCompleteTask(swipedTask)
                         adapter.notifyItemRemoved(viewHolder.adapterPosition)
                         // Undo Complete task
-                        undoCompleteTask(viewHolder.itemView, swipedTask)
+                        CompleteTaskOrUndo(viewHolder.itemView, swipedTask)
                     }
                 }
 
@@ -90,9 +90,14 @@ class MainFragment : Fragment() {
         swipeToDeleteOrTocomplete(recyclerView)
     }
 
-    private fun undoCompleteTask(view: View, completedTask: Task) {
+    private fun CompleteTaskOrUndo(view: View, completedTask: Task) {
+        val msg=when(completedTask.isCompleted){
+            "Completed"->"Uncompleted"
+            "Uncompleted"->"Completed"
+            else->""
+        }
         val snackBar = Snackbar.make(
-            view, "Completed '${completedTask.taskTitle}'",
+            view, "$msg '${completedTask.taskTitle}'",
             Snackbar.LENGTH_LONG
         )
         snackBar.setAction("Undo") {

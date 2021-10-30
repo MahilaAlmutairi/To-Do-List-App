@@ -18,7 +18,7 @@ data class Task(
     //maybe without descr.
     @ColumnInfo(name = "taskDescription")
     var taskDescription: String? = null,
-    var isCompleted:Boolean=false,
+    var isCompleted:String= "Uncompleted",
     val taskCreationDate: Date = Calendar.getInstance().time
 ) : Parcelable
 //isCompleted

@@ -5,7 +5,7 @@
         <item name="colorPrimary">#8D829C</item>
 
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondary">@color/darkGray</item>
 
         <!-- Status bar color. -->
         <!-- Customize your theme here. -->

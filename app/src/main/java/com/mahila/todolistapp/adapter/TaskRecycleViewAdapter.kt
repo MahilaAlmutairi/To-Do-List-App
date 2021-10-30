@@ -31,7 +31,6 @@ class TaskRecycleViewAdapter() :
         }
 
 
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskAdapter {
@@ -50,7 +49,10 @@ class TaskRecycleViewAdapter() :
     }
 
     fun setData(tasks: List<Task>) {
+        val toDoDiffUtil = TaskDiffUtil(tasksList, tasks)
+        val toDoDiffResult = DiffUtil.calculateDiff(toDoDiffUtil)
         this.tasksList = tasks
+        toDoDiffResult.dispatchUpdatesTo(this)
     }
 }
 

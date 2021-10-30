@@ -35,39 +35,27 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="20dp"
+                    android:gravity="center_vertical"
+                    android:src="@drawable/un_done"/>
+
                 <TextView
                     android:id="@+id/tvTaskTitle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="center_vertical"
                     android:text="@{taskInfo.taskTitle}"
                     android:textColor="@color/darkGray"
                     android:textSize="15sp"
                     android:textStyle="bold"
-                    android:gravity="center_vertical"
 
                     />
 
-                <View
-                    android:id="@+id/line1"
-                    android:layout_width="1dp"
-                    android:layout_height="80dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="#B6B3B4"
-                    android:layout_gravity="center"
-                  />
-
-                <TextView
-                    android:id="@+id/tvTaskDueDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:gravity="center_vertical"
-                    android:text="@{taskInfo.taskDueDate.toString()}"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                />
 
             </LinearLayout>
 

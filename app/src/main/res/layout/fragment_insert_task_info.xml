@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="12dp"
     app:layout_constraintCircleRadius="10dp"
-    android:backgroundTint="#C9C5CA"
+    android:backgroundTint="@color/lightGray"
     tools:context=".ui.InsertTaskInfoFragment">
 
     <LinearLayout
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
-            android:hint="I want to do.."
+            android:hint="I want to do..."
             android:minHeight="48dp"
             android:textSize="16sp" />
 
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
-            android:hint="Any more Desc.about your Task.."
+            android:hint="Add a description of your Task..."
             android:textSize="16sp"
             android:lines="11"
             android:gravity="top"/>
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
-            android:hint="Task Due Date"
+            android:hint="select due date.."
             android:textSize="16sp" />
 
         <LinearLayout
@@ -66,6 +66,8 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:backgroundTint="@color/darkGray"
+                android:textColor="@color/white"
                 android:text="OK" />
 
             <Button
@@ -73,6 +75,8 @@
                 android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:backgroundTint="@color/darkGray"
+                android:textColor="@color/white"
                 android:text="Cancel" />
         </LinearLayout>
     </LinearLayout>
