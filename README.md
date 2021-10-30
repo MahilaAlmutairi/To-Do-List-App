@@ -14,12 +14,11 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 
 ## :camera_flash: Screenshots
- coming soon!
- <img src="/screenshot/add.png" width="260">
- <img src="/screenshot/add_page.png" width="260">
- <img src="/screenshot/Task_page.png" width="260">
- <img src="/screenshot/taskInfo_page.png" width="260">
- <img src="/screenshot/taskInfo_page2.png" width="260">
- <img src="/screenshot/update.png" width="260">
- <img src="/screenshot/delete_dialog.png" width="260">
+ <img src="screenshot/add.png" width="260">
+ <img src="screenshot/add_page.png" width="260">
+ <img src="screenshot/Task_page.png" width="260">
+ <img src="screenshot/taskInfo_page.png" width="260">
+ <img src="screenshot/taskInfo_page2.png" width="260">
+ <img src="screenshot/update.png" width="260">
+ <img src="screenshot/delete_dialog.png" width="260">
 
