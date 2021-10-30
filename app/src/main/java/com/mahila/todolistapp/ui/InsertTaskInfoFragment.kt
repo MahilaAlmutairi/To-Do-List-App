@@ -21,6 +21,8 @@ class InsertTaskInfoFragment : Fragment() {
     private val taskViewModel: TaskViewModel by viewModels()
     private var _binding: FragmentInsertTaskInfoBinding? = null
     private val binding get() = _binding!!
+    private  var selectedDate: String="Open Time"
+    private  var date: Date?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,20 +30,27 @@ class InsertTaskInfoFragment : Fragment() {
     ): View {
         _binding = FragmentInsertTaskInfoBinding.inflate(layoutInflater, container, false)
         val calendar = Calendar.getInstance()
-        // add day of month
-        val day = calendar.get(Calendar.DAY_OF_MONTH)
-        val month = calendar.get(Calendar.MONTH)
-        val year = calendar.get(Calendar.YEAR)
 
         binding.tvTaskDueDate.setOnClickListener {
-            DatePickerDialog(binding.root.context, { _, y, m, d ->
+            val datePickerDialog = DatePickerDialog(
+                binding.root.context,
+                { view, year, monthOfYear, dayOfMonth ->
+                   date= Date(year, monthOfYear, dayOfMonth+1)
+                     selectedDate =
+                         year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth
+                    binding.tvTaskDueDate.setText(selectedDate)
+                },
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            )
+            datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis())
+            datePickerDialog.show()
 
-            }, year, month, day)
-                .show()
 
         }
         binding.btnOk.setOnClickListener {
-            insertDataToDb(Date(year, month, day))
+            insertDataToDb(date)
         }
         binding.btnCan.setOnClickListener {
             findNavController().navigate(R.id.action_inaskInfoFragment_to_mainFragment)
@@ -51,15 +60,16 @@ class InsertTaskInfoFragment : Fragment() {
     }
 
 
-    private fun insertDataToDb(date:Date) {
+    private fun insertDataToDb(date: Date?) {
 
 
         if (binding.etTitle.text.toString().isNotEmpty()) {
             // Insert task to Database
             val task1 = Task(
                 taskTitle = binding.etTitle.text.toString(),
-                taskDueDate = date,//need check format
-                taskDescription = binding.etDesc.text.toString()
+                taskDueDate = date,
+                taskDueDateAsString = selectedDate
+                ,taskDescription = binding.etDesc.text.toString()
             )
             taskViewModel.fillDB(task1)
 

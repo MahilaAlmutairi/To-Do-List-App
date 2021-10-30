@@ -27,30 +27,67 @@
             android:inputType="textPersonName"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:text="@{args1.currentTask.taskTitle}" />
 
-        <TextView
-            android:id="@+id/current_creationDate_et"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:hint="dd/mm/yyyy"
-            android:inputType="date"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:text="@{args1.currentTask.taskCreationDate.toString()}" />
 
-
-        <EditText
-            android:id="@+id/current_dueDate_et"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:ems="10"
-            android:hint="dd/mm/yyyy"
-            android:inputType="date"
-            android:paddingStart="24dp"
-            android:paddingEnd="24dp"
-            android:text="@{args1.currentTask.taskDueDate.toString()}" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="Creation Date: "
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/current_creationDate_et"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="dd/mm/yyyy"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@{args1.currentTask.taskCreationDateAsString}"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="15dp"
+                android:gravity="center_vertical"
+                android:text="Creation Date: "
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/current_dueDate_et"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="dd/mm/yyyy"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="@{args1.currentTask.taskDueDateAsString}"
+                android:textSize="16sp" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -59,44 +96,51 @@
 
             <ImageView
                 android:id="@+id/done_im"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
                 android:src="@drawable/done"
                 android:visibility="@{args1.currentTask.isCompleted? View.VISIBLE:View.GONE}" />
 
             <ImageView
                 android:id="@+id/un_done_im"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="15dp"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="45dp"
+                android:layout_marginEnd="45dp"
+                android:layout_gravity="center_vertical|center_horizontal"
+
                 android:src="@drawable/un_done"
                 android:visibility="@{args1.currentTask.isCompleted? View.GONE:View.VISIBLE}" />
 
             <TextView
                 android:id="@+id/current_completed_et"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
                 android:text="Completed"
+                android:textSize="16sp"
+                android:textStyle="italic"
                 android:visibility="@{args1.currentTask.isCompleted? View.VISIBLE:View.GONE}" />
 
             <TextView
                 android:id="@+id/current_uncompleted_et"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="match_parent"
                 android:layout_marginStart="5dp"
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
                 android:text="Uncompleted"
+                android:textSize="16sp"
+                android:textStyle="italic"
                 android:visibility="@{args1.currentTask.isCompleted? View.GONE:View.VISIBLE}" />
         </LinearLayout>
 
@@ -111,6 +155,7 @@
             android:paddingStart="24dp"
             android:paddingTop="16dp"
             android:paddingEnd="24dp"
+            android:textSize="16sp"
             android:text="@{args1.currentTask.taskDescription}" />
 
     </LinearLayout>
