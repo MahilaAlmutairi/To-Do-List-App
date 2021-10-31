@@ -10,7 +10,8 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 
 ## :bulb: Motivation and Context
- typing...
+ 
+The chance to make an impact, Finding innovative solutions, and The fun challenges.
 
 
 ## :camera_flash: Screenshots
