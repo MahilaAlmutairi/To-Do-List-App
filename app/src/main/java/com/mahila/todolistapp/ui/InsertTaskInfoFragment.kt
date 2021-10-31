@@ -35,7 +35,7 @@ class InsertTaskInfoFragment : Fragment() {
             val datePickerDialog = DatePickerDialog(
                 binding.root.context,
                 { view, year, monthOfYear, dayOfMonth ->
-                   date= Date(year, monthOfYear, dayOfMonth+1)
+                   date= Date(year - 1900, monthOfYear+ 0, dayOfMonth+1)
                      selectedDate =
                          year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth
                     binding.tvTaskDueDate.setText(selectedDate)
@@ -44,6 +44,7 @@ class InsertTaskInfoFragment : Fragment() {
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)
             )
+            //-----------------set to setMinDate
             datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis())
             datePickerDialog.show()
 

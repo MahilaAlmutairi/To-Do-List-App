@@ -1,6 +1,7 @@
 package com.mahila.todolistapp.viewModel
 
 import android.app.Application
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -8,6 +9,7 @@ import com.mahila.todolistapp.data.model.Task
 import com.mahila.todolistapp.data.repository.Repo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import java.util.*
 
 class TaskViewModel(context: Application) : AndroidViewModel(context) {
     private val repo = Repo(context)
@@ -19,7 +21,6 @@ class TaskViewModel(context: Application) : AndroidViewModel(context) {
         }
         return tasks
     }
-
 
     fun fillDB(task: Task) = viewModelScope.launch {
         repo.fillDB(task)

@@ -22,8 +22,8 @@ class EditTaskInfoFragment : Fragment() {
 
     private var _binding: FragmentEditTaskInfoBinding? = null
     private val binding get() = _binding!!
-    private lateinit var selectedDate1: String
-    private  var date1: Date?=null
+    private var selectedDate1: String = "Open Time"
+    private var date1: Date? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +32,21 @@ class EditTaskInfoFragment : Fragment() {
         // Data binding
         _binding = FragmentEditTaskInfoBinding.inflate(inflater, container, false)
         binding.args1 = args
+
+        if ((args.currentTask.taskDueDate)?.compareTo(Calendar.getInstance().time) == -1) {
+            val updatedTask = Task(
+                args.currentTask.taskId,
+                args.currentTask.taskTitle,
+                args.currentTask.taskDueDate,
+                "Past Due",
+                args.currentTask.taskDescription,
+                args.currentTask.isCompleted,
+                true
+            )
+            taskViewModel.updateTask(updatedTask)
+             binding.currentDueDateEt.visibility=View.GONE
+             binding.currentPastDue.visibility=View.VISIBLE
+        }
         setHasOptionsMenu(true)
         val calendar = Calendar.getInstance()
 
@@ -39,7 +54,7 @@ class EditTaskInfoFragment : Fragment() {
             val datePickerDialog = DatePickerDialog(
                 binding.root.context,
                 { view, year, monthOfYear, dayOfMonth ->
-                    date1 = Date(year, monthOfYear, dayOfMonth+1)
+                    date1 = Date(year - 1900, monthOfYear+ 0, dayOfMonth+1)
 
                     selectedDate1 =
                         year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth
@@ -49,7 +64,7 @@ class EditTaskInfoFragment : Fragment() {
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH)
             )
-            datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis())
+          //  datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis())
             datePickerDialog.show()
 
 

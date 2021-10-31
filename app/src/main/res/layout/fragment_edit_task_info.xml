@@ -23,13 +23,13 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
-            android:hint="title"
+            android:hint="Title"
             android:inputType="textPersonName"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:text="@{args1.currentTask.taskTitle}"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:text="@{args1.currentTask.taskTitle}" />
+            android:textStyle="bold" />
 
 
         <LinearLayout
@@ -71,7 +71,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 android:gravity="center_vertical"
-                android:text="Creation Date: "
+                android:text="Due Date:         "
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -86,6 +86,20 @@
                 android:paddingEnd="24dp"
                 android:text="@{args1.currentTask.taskDueDateAsString}"
                 android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/current_pastDue"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:gravity="center_vertical"
+                android:hint="dd/mm/yyyy"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp"
+                android:text="Past Due"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:textColor="#A52323"/>
         </LinearLayout>
 
 
@@ -108,9 +122,9 @@
                 android:id="@+id/un_done_im"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
+                android:layout_gravity="center_vertical|center_horizontal"
                 android:layout_marginStart="45dp"
                 android:layout_marginEnd="45dp"
-                android:layout_gravity="center_vertical|center_horizontal"
 
                 android:src="@drawable/un_done"
                 android:visibility="@{args1.currentTask.isCompleted? View.GONE:View.VISIBLE}" />
@@ -150,13 +164,13 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:gravity="top|start"
-            android:hint="description"
+            android:hint="Description"
             android:inputType="textMultiLine"
             android:paddingStart="24dp"
             android:paddingTop="16dp"
             android:paddingEnd="24dp"
-            android:textSize="16sp"
-            android:text="@{args1.currentTask.taskDescription}" />
+            android:text="@{args1.currentTask.taskDescription}"
+            android:textSize="16sp" />
 
     </LinearLayout>
 </layout>

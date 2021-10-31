@@ -21,6 +21,7 @@ data class Task(
     @ColumnInfo(name = "taskDescription")
     var taskDescription: String? = null,
     var isCompleted: Boolean = false,
+    var isPastDue : Boolean = false,
     val taskCreationDate: Date = Calendar.getInstance().time,
     val taskCreationDateAsString: String=taskCreationDate.toInstant().toString().substringBefore('T')
 

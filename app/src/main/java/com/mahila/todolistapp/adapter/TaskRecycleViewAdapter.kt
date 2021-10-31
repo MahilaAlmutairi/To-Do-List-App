@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.mahila.todolistapp.data.model.Task
 import com.mahila.todolistapp.databinding.RecycleViewItemBinding
+import java.util.*
 
 
 class TaskRecycleViewAdapter() :
@@ -15,12 +16,9 @@ class TaskRecycleViewAdapter() :
     class TaskAdapter(private val binding: RecycleViewItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-
         fun bind(task: Task) {
-
             binding.taskInfo = task
             binding.executePendingBindings()
-
         }
 
 
@@ -55,11 +53,11 @@ class TaskRecycleViewAdapter() :
 
 
     fun setData(tasks: List<Task>) {
-//
+
         val diffUtil = TaskDiffUtil(tasksList, tasks)
         val diffResult = DiffUtil.calculateDiff(diffUtil)
         this.tasksList = tasks
-        //
+
         diffResult.dispatchUpdatesTo(this)
     }
 }

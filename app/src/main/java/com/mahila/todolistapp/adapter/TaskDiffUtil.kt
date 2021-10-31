@@ -2,11 +2,13 @@ package com.mahila.todolistapp.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.mahila.todolistapp.data.model.Task
+import java.util.*
 
 class TaskDiffUtil(
     private val oldList: List<Task>,
     private val newList: List<Task>
-): DiffUtil.Callback() {
+
+) : DiffUtil.Callback() {
 
     override fun getOldListSize(): Int {
         return oldList.size
@@ -21,10 +23,13 @@ class TaskDiffUtil(
     }
 
     override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+
         return oldList[oldItemPosition].taskId == newList[newItemPosition].taskId
                 && oldList[oldItemPosition].taskTitle == newList[newItemPosition].taskTitle
                 && oldList[oldItemPosition].taskDescription == newList[newItemPosition].taskDescription
-          && oldList[oldItemPosition].isCompleted == newList[newItemPosition].isCompleted
+                && oldList[oldItemPosition].isCompleted == newList[newItemPosition].isCompleted
+                && oldList[oldItemPosition].isPastDue == newList[newItemPosition].isPastDue
+
 
     }
 }
