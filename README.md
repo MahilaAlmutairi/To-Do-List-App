@@ -19,6 +19,8 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
  <img src="screenshot/Task_page.jpeg" width="260">
  <img src="v1.gif" width="260">
  <img src="v6.gif" width="260">
+ <img src="im1.jpeg" width="260">
+ <img src="im2.jpeg" width="260">
  <img src="screenshot/update.jpeg" width="260">
  <img src="screenshot/delete_dialog.jpeg" width="260">
 
