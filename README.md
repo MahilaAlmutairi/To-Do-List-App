@@ -12,7 +12,7 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 
 ## :bulb: Motivation 
- Finding innovative solutions and taking the fun challenges.
+ Finding innovative solutions and taking up the fun challenges.
 
 ## :camera_flash: Screenshots
  <img src="add.jpeg" width="260">
