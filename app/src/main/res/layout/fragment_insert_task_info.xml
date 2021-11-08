@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:backgroundTint="@color/lightGray"
     android:orientation="vertical"
     android:padding="12dp"
     app:layout_constraintCircleRadius="10dp"
-    android:backgroundTint="@color/lightGray"
     tools:context=".ui.InsertTaskInfoFragment">
 
     <LinearLayout
@@ -31,7 +30,9 @@
             android:layout_marginTop="12dp"
             android:hint="I want to do..."
             android:minHeight="48dp"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_back_ground"/>
 
         <EditText
             android:id="@+id/etDesc"
@@ -39,19 +40,39 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
+            android:gravity="top"
             android:hint="Add a description of your task..."
-            android:textSize="16sp"
             android:lines="11"
-            android:gravity="top"/>
+            android:textSize="16sp"
+            android:padding="10dp"
+            android:background="@drawable/edittext_back_ground"/>
 
-        <TextView
-            android:id="@+id/tvTaskDueDate"
+        <LinearLayout
+            android:id="@+id/linearLayoutDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_marginTop="12dp"
-            android:hint="Select due date.."
-            android:textSize="16sp" />
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="5dp"
+
+            >
+
+            <ImageView
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/calendar"
+                android:layout_marginEnd="10dp"/>
+
+            <TextView
+                android:id="@+id/tvTaskDueDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Select due date.."
+                android:textSize="16sp" />
+        </LinearLayout>
+
 
         <LinearLayout
             android:id="@+id/L2"
@@ -63,23 +84,23 @@
 
             <Button
                 android:id="@+id/btnOk"
-                android:layout_width="170dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:backgroundTint="#3c1c4b"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_shape"
+                android:text="OK"
                 android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="OK" />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/btnCan"
-                android:layout_width="170dp"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:backgroundTint="#3c1c4b"
-                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/button_shape"
+                android:text="Cancel"
                 android:textColor="@color/white"
-                android:text="Cancel" />
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 

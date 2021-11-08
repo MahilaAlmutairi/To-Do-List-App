@@ -14,7 +14,6 @@ import com.mahila.todolistapp.adapter.TaskRecycleViewAdapter
 import com.mahila.todolistapp.data.model.Task
 import com.mahila.todolistapp.databinding.FragmentMainBinding
 import com.mahila.todolistapp.viewModel.TaskViewModel
-import java.util.*
 
 class MainFragment : Fragment() {
 
@@ -41,7 +40,6 @@ class MainFragment : Fragment() {
             binding.rvRecycleView.scheduleLayoutAnimation()
         })
 
-        setHasOptionsMenu(true)
 
         return binding.root
     }
@@ -55,16 +53,16 @@ class MainFragment : Fragment() {
                         // Delete task
                         taskViewModel.deleteTask(swipedTask)
                         adapter.notifyItemRemoved(viewHolder.adapterPosition)
+
                         // Restore deleted task
                         restoreDeletedData(viewHolder.itemView, swipedTask)
                     }
                     ItemTouchHelper.RIGHT -> {
                         // Complete task
                         taskViewModel.switchCompleteTask(swipedTask)
-                        adapter.notifyItemRemoved(viewHolder.adapterPosition)
+                        adapter.notifyItemChanged(viewHolder.adapterPosition)
                         // Undo Complete task
-                        CompleteTaskOrUndo(viewHolder.itemView, swipedTask)
-                        // setImageDone(swipedTask)
+                        completeTaskOrUndo(viewHolder.itemView, swipedTask)
                     }
                 }
 
@@ -93,16 +91,11 @@ class MainFragment : Fragment() {
     }
 
 
-    private fun CompleteTaskOrUndo(view: View, completedTask: Task) {
-        /* val msg = when (completedTask.isCompleted) {
-             "Completed" -> "Uncompleted"
-             "Uncompleted" -> "Well Done!"
-             else -> ""
-         }*/
+    private fun completeTaskOrUndo(view: View, completedTask: Task) {
+
         val msg = when (completedTask.isCompleted) {
-            false -> "Uncompleted"
-            true -> "Well Done!"
-            else -> ""
+             true  -> "Uncompleted"
+            false-> "Well Done!"
         }
         val snackBar = Snackbar.make(
             view, "$msg '${completedTask.taskTitle}'",

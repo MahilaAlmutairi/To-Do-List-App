@@ -41,7 +41,7 @@ class EditTaskInfoFragment : Fragment() {
                 "Past Due",
                 args.currentTask.taskDescription,
                 args.currentTask.isCompleted,
-                true
+                true //del
             )
             taskViewModel.updateTask(updatedTask)
              binding.currentDueDateEt.visibility=View.GONE
@@ -54,7 +54,7 @@ class EditTaskInfoFragment : Fragment() {
             val datePickerDialog = DatePickerDialog(
                 binding.root.context,
                 { view, year, monthOfYear, dayOfMonth ->
-                    date1 = Date(year - 1900, monthOfYear+ 0, dayOfMonth+1)
+                    date1 = Date(year - 1900, monthOfYear, dayOfMonth+1)
 
                     selectedDate1 =
                         year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth
@@ -89,7 +89,6 @@ class EditTaskInfoFragment : Fragment() {
 
         val title = binding.currentTitleEt.text.toString()
         val description = binding.currentDescriptionEt.text.toString()
-        val dueDate = binding.currentDueDateEt.text.toString()//need check format
 
         if (!(title.isEmpty())) {
             // Update Current Task

@@ -31,7 +31,7 @@ class InsertTaskInfoFragment : Fragment() {
         _binding = FragmentInsertTaskInfoBinding.inflate(layoutInflater, container, false)
         val calendar = Calendar.getInstance()
 
-        binding.tvTaskDueDate.setOnClickListener {
+        binding.linearLayoutDate.setOnClickListener {
             val datePickerDialog = DatePickerDialog(
                 binding.root.context,
                 { view, year, monthOfYear, dayOfMonth ->

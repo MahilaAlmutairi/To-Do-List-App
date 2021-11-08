@@ -29,13 +29,15 @@
             android:paddingEnd="24dp"
             android:text="@{args1.currentTask.taskTitle}"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:background="@drawable/edittext_back_ground"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -63,7 +65,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -71,7 +74,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="15dp"
                 android:gravity="center_vertical"
-                android:text="Due Date:         "
+                android:text="Due Date: "
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -84,8 +87,10 @@
                 android:hint="dd/mm/yyyy"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
+                android:layout_marginStart="35dp"
                 android:text="@{args1.currentTask.taskDueDateAsString}"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textColor="#68ac7c"/>
 
             <TextView
                 android:id="@+id/current_pastDue"
@@ -106,7 +111,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
 
             <ImageView
                 android:id="@+id/done_im"
@@ -133,11 +139,9 @@
                 android:id="@+id/current_completed_et"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="30dp"
                 android:ems="10"
                 android:gravity="center_vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
                 android:text="Completed"
                 android:textSize="16sp"
                 android:textStyle="italic"
@@ -147,11 +151,9 @@
                 android:id="@+id/current_uncompleted_et"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="30dp"
                 android:ems="10"
                 android:gravity="center_vertical"
-                android:paddingStart="24dp"
-                android:paddingEnd="24dp"
                 android:text="Uncompleted"
                 android:textSize="16sp"
                 android:textStyle="italic"
@@ -162,6 +164,7 @@
             android:id="@+id/current_description_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:gravity="top|start"
             android:hint="Description"
@@ -169,8 +172,10 @@
             android:paddingStart="24dp"
             android:paddingTop="16dp"
             android:paddingEnd="24dp"
+            android:paddingBottom="16dp"
             android:text="@{args1.currentTask.taskDescription}"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:background="@drawable/edittext_back_ground"/>
 
     </LinearLayout>
 </layout>
