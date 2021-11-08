@@ -9,9 +9,9 @@ The user is able to delete the task by swiping to Left. and She/He is able to Un
 Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, and Coroutines libraries, and learned how to use the data-binding library on my Android app.
 
 
-## :bulb: Motivation and Context
+## :bulb: Motivation
  
-The chance to make an impact, Finding innovative solutions, and The fun challenges.
+Finding innovative solutions and taking up the fun challenges.
 
 
 ## :camera_flash: Screenshots
