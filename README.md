@@ -15,13 +15,13 @@ Finding innovative solutions and taking up the fun challenges.
 
 
 ## :camera_flash: Screenshots
- <img src="screenshot/add.jpeg" width="260">
- <img src="screenshot/add_page.jpeg" width="260">
- <img src="screenshot/Task_page.jpeg" width="260">
- <img src="v1.gif" width="260">
- <img src="v6.gif" width="260">
- <img src="im1.jpeg" width="260">
- <img src="im2.jpeg" width="260">
- <img src="screenshot/update.jpeg" width="260">
- <img src="screenshot/delete_dialog.jpeg" width="260">
+ <img src="Main screen.jpeg" width="260">
+  <img src="Add Task.jpeg" width="260">
+ <img src="Picking a due date.jpeg" width="260">
+  <img src="A response message.jpeg" width="260">
+ <img src="Edit Task e.g1.jpeg" width="260">
+ <img src="Edit Task e.g2.jpeg" width="260">
+ <img src="Deleting a task.jpeg" width="260">
+ <img src="switch_between_the_state_of_the_task_2.gif" width="260">
+ <img src="Switch_between_the_state_of_the_task_1.gif" width="260">
 
