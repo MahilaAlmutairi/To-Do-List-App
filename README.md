@@ -16,9 +16,11 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 
 ## :camera_flash: Screenshots
  <img src="Main screen.jpeg" width="260">
- <img src="add_page.jpeg" width="260">
- <img src="Task_page.jpeg" width="260">
- <img src="taskInfo_page.jpeg" width="260">
- <img src="taskInfo_page2.jpeg" width="260">
- <img src="update.jpeg" width="260">
- <img src="delete_dialog.jpeg" width="260">
+  <img src="Add Task.jpeg" width="260">
+ <img src="Picking a due date.jpeg" width="260">
+  <img src="A response message.jpeg" width="260">
+ <img src="Edit Task e.g1.jpeg" width="260">
+ <img src="Edit Task e.g2.jpeg" width="260">
+ <img src="Deleting a task.jpeg" width="260">
+ <img src="switch between the state of the task 2.gif" width="260">
+ <img src="switch between the state of the task 1.gif" width="260">
