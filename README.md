@@ -1,5 +1,4 @@
 # To-Do-List-App
-<-To-Do-List-App>
 <MahilaAlmutairi>
 ## :scroll: Description
 It is a mighty to-do app that makes you more productive. It’s as easy to use, and once you start ordering your day with it, you’ll wonder how you ever operated without it :wink:.\
@@ -22,5 +21,5 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
  <img src="Edit Task e.g1.jpeg" width="260">
  <img src="Edit Task e.g2.jpeg" width="260">
  <img src="Deleting a task.jpeg" width="260">
- <img src="switch between the state of the task 2.gif" width="260">
- <img src="switch between the state of the task 1.gif" width="260">
+ <img src="switch between the state of the task 2.GIF" width="260">
+ <img src="switch between the state of the task 1.GIF" width="260">
