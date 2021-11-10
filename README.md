@@ -25,4 +25,4 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
  <img src="Edit Task e.g2.jpeg" width="260">
  <img src="Deleting a task.jpeg" width="260">
  <img src="switch_between_the_state_of_the_task_2.gif" width="260">
- <img src="switch_between_the_state_of_the_task_1.gif" width="260">
+ <img src="Switch_between_the_state_of_the_task_1.gif" width="260">
