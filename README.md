@@ -15,7 +15,7 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
  Finding innovative solutions and taking up the fun challenges.
 
 ## :camera_flash: Screenshots
- <img src="add.jpeg" width="260">
+ <img src="Main screen.jpeg" width="260">
  <img src="add_page.jpeg" width="260">
  <img src="Task_page.jpeg" width="260">
  <img src="taskInfo_page.jpeg" width="260">
