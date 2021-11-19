@@ -1,5 +1,9 @@
 # To-Do-List-App
 ## :scroll: Description
+<MahilaAlmutairi>
+ 
+## :scroll: Description
+ 
 It is a mighty to-do app that makes you more productive. It’s as easy to use, and once you start ordering your day with it, you’ll wonder how you ever operated without it :wink:.\
 In my app:\
 The to-do list is persistent for the user, She/He is able to add, delete and edit tasks. 
@@ -12,7 +16,6 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 ## :bulb: Motivation
  
 Finding innovative solutions and taking up the fun challenges.
-
 
 ## :camera_flash: Screenshots
  <img src="Main screen.jpeg" width="260">
