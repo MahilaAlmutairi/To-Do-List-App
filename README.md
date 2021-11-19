@@ -1,5 +1,5 @@
 # To-Do-List-App
-
+## :scroll: Description
 <MahilaAlmutairi>
  
 ## :scroll: Description
@@ -13,8 +13,9 @@ The user is able to delete the task by swiping to Left. and She/He is able to Un
 Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, and Coroutines libraries, and learned how to use the data-binding library on my Android app.
 
 
-## :bulb: Motivation 
- Finding innovative solutions and taking up the fun challenges.
+## :bulb: Motivation
+ 
+Finding innovative solutions and taking up the fun challenges.
 
 ## :camera_flash: Screenshots
  <img src="Main screen.jpeg" width="260">
@@ -26,3 +27,4 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
  <img src="Deleting a task.jpeg" width="260">
  <img src="switch_between_the_state_of_the_task_2.gif" width="260">
  <img src="Switch_between_the_state_of_the_task_1.gif" width="260">
+
