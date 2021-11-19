@@ -1,5 +1,4 @@
 # To-Do-List-App
-## :scroll: Description
 <MahilaAlmutairi>
  
 ## :scroll: Description
