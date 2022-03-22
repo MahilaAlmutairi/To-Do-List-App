@@ -17,13 +17,13 @@ Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, a
 Finding innovative solutions and taking up the fun challenges.
 
 ## :camera_flash: Screenshots
- <img src="Main screen.jpeg" width="260">
-  <img src="Add Task.jpeg" width="260">
- <img src="Picking a due date.jpeg" width="260">
-  <img src="A response message.jpeg" width="260">
- <img src="Edit Task e.g1.jpeg" width="260">
- <img src="Edit Task e.g2.jpeg" width="260">
- <img src="Deleting a task.jpeg" width="260">
- <img src="switch_between_the_state_of_the_task_2.gif" width="260">
- <img src="Switch_between_the_state_of_the_task_1.gif" width="260">
+ <img src="images\Main screen.jpeg" width="260">
+  <img src="images\Add Task.jpeg" width="260">
+ <img src="images\Picking a due date.jpeg" width="260">
+  <img src="images\A response message.jpeg" width="260">
+ <img src="images/Edit Task e.g1.jpeg" width="260">
+ <img src="images/Edit Task e.g2.jpeg" width="260">
+ <img src="images\Deleting a task.jpeg" width="260">
+ <img src="images\switch_between_the_state_of_the_task_2.gif" width="260">
+ <img src="images\Switch_between_the_state_of_the_task_1.gif" width="260">
 
