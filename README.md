@@ -1,22 +1,17 @@
 # To-Do-List-App
 <MahilaAlmutairi>
  
-## :scroll: Description
+## Description
  
 It is a mighty to-do app that makes you more productive. It’s as easy to use, and once you start ordering your day with it, you’ll wonder how you ever operated without it :wink:.\
-In my app:\
-The to-do list is persistent for the user, She/He is able to add, delete and edit tasks. 
-Also, no data is lost if the user terminates and relaunches the application, or if the user reboots their device.
-The user is able to switch between the state of the task (completed/uncompleted) by swiping to Right. and She/He is able to Undo that.
-The user is able to delete the task by swiping to Left. and She/He is able to Undo that.
-Throughout this assignment, I have applied Room, Fragment Navigation, Dialogs, and Coroutines libraries, and learned how to use the data-binding library on my Android app.
 
+ ##Libraries and technologies used:
+•	MVVM Architectural Pattern.\
+•	Jetpack libraries (Coroutines, Lifecycle, Navigation, and DataBinding).\
+•	Cloud Firestore.
+•	Room database
 
-## :bulb: Motivation
- 
-Finding innovative solutions and taking up the fun challenges.
-
-## :camera_flash: Screenshots
+## Screenshots
  <img src="images\Main screen.jpeg" width="260">
   <img src="images\Add Task.jpeg" width="260">
  <img src="images\Picking a due date.jpeg" width="260">
