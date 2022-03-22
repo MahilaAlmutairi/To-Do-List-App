@@ -1,7 +1,7 @@
-package com.mahila.todolistapp.data
+package com.mahila.toDoListApp.model
 
 import androidx.room.*
-import com.mahila.todolistapp.data.model.Task
+import com.mahila.toDoListApp.model.entity.Task
 
 
     @Dao

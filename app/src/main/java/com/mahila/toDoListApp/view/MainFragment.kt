@@ -1,4 +1,4 @@
-package com.mahila.todolistapp.ui
+package com.mahila.toDoListApp.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,18 +9,19 @@ import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.mahila.todolistapp.adapter.SwipeToDeleteOrToComplete
-import com.mahila.todolistapp.adapter.TaskRecycleViewAdapter
-import com.mahila.todolistapp.data.model.Task
-import com.mahila.todolistapp.databinding.FragmentMainBinding
-import com.mahila.todolistapp.viewModel.TaskViewModel
+import com.mahila.toDoListApp.model.entity.Task
+import com.mahila.toDoListApp.view.adapter.SwipeToDeleteOrToComplete
+import com.mahila.toDoListApp.view.adapter.TaskRecycleViewAdapter
+import com.mahila.toDoListApp.viewModel.TaskViewModel
+import toDoListApp.databinding.FragmentMainBinding
 
 class MainFragment : Fragment() {
 
     private val taskViewModel: TaskViewModel by viewModels()
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
-    private val adapter: TaskRecycleViewAdapter by lazy { TaskRecycleViewAdapter() }
+    private lateinit var adapter: TaskRecycleViewAdapter
+    lateinit var taskList: MutableList<Task>
 
 
     override fun onCreateView(
@@ -31,17 +32,14 @@ class MainFragment : Fragment() {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = this
 
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         // Setup RecyclerView
         setupRecyclerview()
-
-        // Observe LiveData
-        taskViewModel.getAll().observe(viewLifecycleOwner, { data ->
-            adapter.setData(data)
-            binding.rvRecycleView.scheduleLayoutAnimation()
-        })
-
-
-        return binding.root
     }
 
     private fun swipeToDeleteOrTocomplete(recyclerView: RecyclerView) {
@@ -52,10 +50,13 @@ class MainFragment : Fragment() {
                     ItemTouchHelper.LEFT -> {
                         // Delete task
                         taskViewModel.deleteTask(swipedTask)
-                        adapter.notifyItemRemoved(viewHolder.adapterPosition)
+                       // adapter.notifyItemRemoved(viewHolder.adapterPosition)
+                        taskList.removeAt(viewHolder.adapterPosition)
+                        adapter = TaskRecycleViewAdapter(taskList)
+                        binding.rvRecycleView.adapter = adapter
 
                         // Restore deleted task
-                        restoreDeletedData(viewHolder.itemView, swipedTask)
+                        restoreDeletedData(swipedTask)
                     }
                     ItemTouchHelper.RIGHT -> {
                         // Complete task
@@ -63,6 +64,7 @@ class MainFragment : Fragment() {
                         adapter.notifyItemChanged(viewHolder.adapterPosition)
                         // Undo Complete task
                         completeTaskOrUndo(viewHolder.itemView, swipedTask)
+
                     }
                 }
 
@@ -72,30 +74,37 @@ class MainFragment : Fragment() {
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
-    private fun restoreDeletedData(view: View, deletedTask: Task) {
+    private fun restoreDeletedData( deletedTask: Task) {
         val snackBar = Snackbar.make(
-            view, "Deleted '${deletedTask.taskTitle}'",
+            binding.rvRecycleView, "Deleted '${deletedTask.taskTitle}'",
             Snackbar.LENGTH_LONG
         )
         snackBar.setAction("Undo") {
             taskViewModel.restoreDeleted(deletedTask)
+            taskList.add( deletedTask)
+            adapter = TaskRecycleViewAdapter(taskList)
+            binding.rvRecycleView.adapter = adapter
         }
         snackBar.show()
     }
 
     private fun setupRecyclerview() {
-        val recyclerView = binding.rvRecycleView
-        recyclerView.adapter = adapter
+        // Observe LiveData
+        taskViewModel.getAll().observe(viewLifecycleOwner) { data ->
+            taskList = data.toMutableList()
+            adapter = TaskRecycleViewAdapter(data)
+            binding.rvRecycleView.adapter = adapter
+            binding.rvRecycleView.scheduleLayoutAnimation()
+        }
         // Swipe to Delete or complete
-        swipeToDeleteOrTocomplete(recyclerView)
+        swipeToDeleteOrTocomplete(binding.rvRecycleView)
     }
 
 
     private fun completeTaskOrUndo(view: View, completedTask: Task) {
-
         val msg = when (completedTask.isCompleted) {
-             true  -> "Uncompleted"
-            false-> "Well Done!"
+            true -> "Well Done!"
+            false -> "Uncompleted"
         }
         val snackBar = Snackbar.make(
             view, "$msg '${completedTask.taskTitle}'",

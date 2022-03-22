@@ -9,7 +9,7 @@
     android:orientation="vertical"
     android:padding="12dp"
     app:layout_constraintCircleRadius="10dp"
-    tools:context=".ui.InsertTaskInfoFragment">
+    tools:context="com.mahila.toDoListApp.view.InsertTaskInfoFragment">
 
     <LinearLayout
         android:id="@+id/L1"
