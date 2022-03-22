@@ -3,12 +3,11 @@
  
 ## Description
  
-It is a mighty to-do app that makes you more productive. It’s as easy to use, and once you start ordering your day with it, you’ll wonder how you ever operated without it :wink:.\
+It is a mighty to-do app that makes you more productive. It’s as easy to use, and once you start ordering your day with it, you’ll wonder how you ever operated without it :wink:.
 
- ##Libraries and technologies used:
+ ## Libraries and technologies used:
 •	MVVM Architectural Pattern.\
 •	Jetpack libraries (Coroutines, Lifecycle, Navigation, and DataBinding).\
-•	Cloud Firestore.
 •	Room database
 
 ## Screenshots
