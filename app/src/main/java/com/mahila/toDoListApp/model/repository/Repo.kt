@@ -1,8 +1,8 @@
-package com.mahila.todolistapp.data.repository
+package com.mahila.toDoListApp.model.repository
 
 import android.content.Context
-import com.mahila.todolistapp.data.database.AppDatabase
-import com.mahila.todolistapp.data.model.Task
+import com.mahila.toDoListApp.model.database.AppDatabase
+import com.mahila.toDoListApp.model.entity.Task
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

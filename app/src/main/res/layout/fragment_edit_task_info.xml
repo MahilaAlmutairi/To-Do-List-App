@@ -5,10 +5,9 @@
     <data>
 
         <import type="android.view.View" />
-
         <variable
             name="args1"
-            type="com.mahila.todolistapp.ui.EditTaskInfoFragmentArgs" />
+            type="com.mahila.toDoListApp.model.entity.Task" />
     </data>
 
     <LinearLayout
@@ -16,7 +15,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="24dp"
-        tools:context=".fragments.update.UpdateFragment">
+        tools:context=".ui.EditTaskInfoFragmen">
 
         <EditText
             android:id="@+id/current_title_et"
@@ -27,7 +26,7 @@
             android:inputType="textPersonName"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
-            android:text="@{args1.currentTask.taskTitle}"
+            android:text="@{args1.taskTitle}"
             android:textSize="20sp"
             android:textStyle="bold"
             android:background="@drawable/edittext_back_ground"/>
@@ -37,7 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:gravity="center"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -58,7 +59,7 @@
                 android:hint="dd/mm/yyyy"
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
-                android:text="@{args1.currentTask.taskCreationDateAsString}"
+                android:text="@{args1.taskCreationDateAsString}"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -66,7 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            android:gravity="center"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -88,7 +91,7 @@
                 android:paddingStart="24dp"
                 android:paddingEnd="24dp"
                 android:layout_marginStart="35dp"
-                android:text="@{args1.currentTask.taskDueDateAsString}"
+                android:text="@{args1.taskDueDateAsString}"
                 android:textSize="16sp"
                 android:textColor="#68ac7c"/>
 
@@ -112,7 +115,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_margin="5dp">
+            android:gravity="center"
+            >
 
             <ImageView
                 android:id="@+id/done_im"
@@ -122,7 +126,7 @@
                 android:layout_marginStart="45dp"
                 android:layout_marginEnd="45dp"
                 android:src="@drawable/done"
-                android:visibility="@{args1.currentTask.isCompleted? View.VISIBLE:View.GONE}" />
+                android:visibility="@{args1.isCompleted? View.VISIBLE:View.GONE}" />
 
             <ImageView
                 android:id="@+id/un_done_im"
@@ -133,31 +137,31 @@
                 android:layout_marginEnd="45dp"
 
                 android:src="@drawable/un_done"
-                android:visibility="@{args1.currentTask.isCompleted? View.GONE:View.VISIBLE}" />
+                android:visibility="@{args1.isCompleted? View.GONE:View.VISIBLE}" />
 
             <TextView
                 android:id="@+id/current_completed_et"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="35dp"
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:text="Completed"
                 android:textSize="16sp"
                 android:textStyle="italic"
-                android:visibility="@{args1.currentTask.isCompleted? View.VISIBLE:View.GONE}" />
+                android:visibility="@{args1.isCompleted? View.VISIBLE:View.GONE}" />
 
             <TextView
                 android:id="@+id/current_uncompleted_et"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="35dp"
                 android:ems="10"
                 android:gravity="center_vertical"
                 android:text="Uncompleted"
                 android:textSize="16sp"
                 android:textStyle="italic"
-                android:visibility="@{args1.currentTask.isCompleted? View.GONE:View.VISIBLE}" />
+                android:visibility="@{args1.isCompleted? View.GONE:View.VISIBLE}" />
         </LinearLayout>
 
         <EditText
@@ -173,7 +177,7 @@
             android:paddingTop="16dp"
             android:paddingEnd="24dp"
             android:paddingBottom="16dp"
-            android:text="@{args1.currentTask.taskDescription}"
+            android:text="@{args1.taskDescription}"
             android:textSize="16sp"
             android:background="@drawable/edittext_back_ground"/>
 

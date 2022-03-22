@@ -1,4 +1,4 @@
-package com.mahila.todolistapp
+package com.mahila.toDoListApp
 
 import org.junit.Test
 

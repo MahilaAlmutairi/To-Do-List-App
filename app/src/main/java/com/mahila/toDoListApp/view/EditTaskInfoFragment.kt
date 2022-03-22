@@ -1,4 +1,4 @@
-package com.mahila.todolistapp.ui
+package com.mahila.toDoListApp.view
 
 import android.app.AlertDialog
 import android.app.DatePickerDialog
@@ -9,17 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.mahila.todolistapp.R
-import com.mahila.todolistapp.data.model.Task
-import com.mahila.todolistapp.databinding.FragmentEditTaskInfoBinding
-import com.mahila.todolistapp.viewModel.TaskViewModel
+import com.mahila.toDoListApp.model.entity.Task
+import com.mahila.toDoListApp.viewModel.TaskViewModel
+import toDoListApp.R
+import toDoListApp.databinding.FragmentEditTaskInfoBinding
 import java.util.*
 
 class EditTaskInfoFragment : Fragment() {
-    private val args by navArgs<EditTaskInfoFragmentArgs>()
+    private val args:EditTaskInfoFragmentArgs by navArgs()
 
     private val taskViewModel: TaskViewModel by viewModels()
-
     private var _binding: FragmentEditTaskInfoBinding? = null
     private val binding get() = _binding!!
     private var selectedDate1: String = "Open Time"
@@ -31,7 +30,7 @@ class EditTaskInfoFragment : Fragment() {
     ): View {
         // Data binding
         _binding = FragmentEditTaskInfoBinding.inflate(inflater, container, false)
-        binding.args1 = args
+        binding.args1 = args.currentTask
 
         if ((args.currentTask.taskDueDate)?.compareTo(Calendar.getInstance().time) == -1) {
             val updatedTask = Task(
@@ -53,12 +52,12 @@ class EditTaskInfoFragment : Fragment() {
         binding.currentDueDateEt.setOnClickListener {
             val datePickerDialog = DatePickerDialog(
                 binding.root.context,
-                { view, year, monthOfYear, dayOfMonth ->
+                { _, year, monthOfYear, dayOfMonth ->
                     date1 = Date(year - 1900, monthOfYear, dayOfMonth+1)
 
                     selectedDate1 =
                         year.toString() + "-" + (monthOfYear + 1) + "-" + dayOfMonth
-                    binding.currentDueDateEt.setText(selectedDate1)
+                    binding.currentDueDateEt.text = selectedDate1
                 },
                 calendar.get(Calendar.YEAR),
                 calendar.get(Calendar.MONTH),
@@ -90,7 +89,7 @@ class EditTaskInfoFragment : Fragment() {
         val title = binding.currentTitleEt.text.toString()
         val description = binding.currentDescriptionEt.text.toString()
 
-        if (!(title.isEmpty())) {
+        if (title.isNotEmpty()) {
             // Update Current Task
             val updatedTask = Task(
                 args.currentTask.taskId,

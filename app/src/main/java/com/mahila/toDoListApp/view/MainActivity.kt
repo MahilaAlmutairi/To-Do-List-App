@@ -1,10 +1,11 @@
-package com.mahila.todolistapp
+package com.mahila.toDoListApp.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import toDoListApp.R
 
 class MainActivity : AppCompatActivity() {
    private lateinit var navController: NavController
@@ -16,11 +17,9 @@ class MainActivity : AppCompatActivity() {
         val navMainFragment = supportFragmentManager
             .findFragmentById(R.id.navMainFragment) as NavHostFragment
         navController = navMainFragment.navController
-
         setupActionBarWithNavController(navController)
 
     }
-
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }

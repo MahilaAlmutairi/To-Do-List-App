@@ -1,5 +1,4 @@
-package com.mahila.todolistapp.data.model
-//-------------------------------*
+package com.mahila.toDoListApp.model.entity
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -26,4 +25,3 @@ data class Task(
     val taskCreationDateAsString: String=taskCreationDate.toInstant().toString().substringBefore('T')
 
 ) : Parcelable
-//isCompleted

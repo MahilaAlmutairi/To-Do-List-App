@@ -6,7 +6,7 @@
         <import type="android.view.View" />
         <variable
             name="taskInfo"
-            type="com.mahila.todolistapp.data.model.Task" />
+            type="com.mahila.toDoListApp.model.entity.Task" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -15,7 +15,8 @@
         android:layout_marginLeft="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
-        android:layout_marginBottom="5dp">
+        android:layout_marginBottom="5dp"
+        android:visibility="@{taskInfo==null? View.GONE:View.VISIBLE}">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl1"

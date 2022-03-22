@@ -1,4 +1,4 @@
-package com.mahila.todolistapp.ui
+package com.mahila.toDoListApp.view
 
 import android.app.DatePickerDialog
 import android.os.Bundle
@@ -9,10 +9,10 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.mahila.todolistapp.R
-import com.mahila.todolistapp.data.model.Task
-import com.mahila.todolistapp.databinding.FragmentInsertTaskInfoBinding
-import com.mahila.todolistapp.viewModel.TaskViewModel
+import com.mahila.toDoListApp.model.entity.Task
+import com.mahila.toDoListApp.viewModel.TaskViewModel
+import toDoListApp.R
+import toDoListApp.databinding.FragmentInsertTaskInfoBinding
 import java.util.*
 
 
