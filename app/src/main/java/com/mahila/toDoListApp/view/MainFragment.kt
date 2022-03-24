@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.ItemTouchHelper
@@ -40,6 +41,26 @@ class MainFragment : Fragment() {
 
         // Setup RecyclerView
         setupRecyclerview()
+        //search
+        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.search.clearFocus()
+                if (query != null) {
+                    searchThroughDatabase(query)
+                }
+                return true
+            }
+
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    searchThroughDatabase(newText)
+                }
+                return true
+            }
+
+        })
     }
 
     private fun swipeToDeleteOrTocomplete(recyclerView: RecyclerView) {
@@ -50,7 +71,7 @@ class MainFragment : Fragment() {
                     ItemTouchHelper.LEFT -> {
                         // Delete task
                         taskViewModel.deleteTask(swipedTask)
-                       // adapter.notifyItemRemoved(viewHolder.adapterPosition)
+                        // adapter.notifyItemRemoved(viewHolder.adapterPosition)
                         taskList.removeAt(viewHolder.adapterPosition)
                         adapter = TaskRecycleViewAdapter(taskList)
                         binding.rvRecycleView.adapter = adapter
@@ -74,14 +95,14 @@ class MainFragment : Fragment() {
         itemTouchHelper.attachToRecyclerView(recyclerView)
     }
 
-    private fun restoreDeletedData( deletedTask: Task) {
+    private fun restoreDeletedData(deletedTask: Task) {
         val snackBar = Snackbar.make(
             binding.rvRecycleView, "Deleted '${deletedTask.taskTitle}'",
             Snackbar.LENGTH_LONG
         )
         snackBar.setAction("Undo") {
             taskViewModel.restoreDeleted(deletedTask)
-            taskList.add( deletedTask)
+            taskList.add(deletedTask)
             adapter = TaskRecycleViewAdapter(taskList)
             binding.rvRecycleView.adapter = adapter
         }
@@ -114,6 +135,17 @@ class MainFragment : Fragment() {
             taskViewModel.switchCompleteTask(completedTask)
         }
         snackBar.show()
+    }
+
+    private fun searchThroughDatabase(query: String) {
+        val searchQuery = "%$query%"
+        taskViewModel.findByTitle(searchQuery).observe(viewLifecycleOwner) { list ->
+            list?.let {
+                adapter = TaskRecycleViewAdapter(list)
+                binding.rvRecycleView.adapter = adapter
+                binding.rvRecycleView.scheduleLayoutAnimation()
+            }
+        }
     }
 
     override fun onDestroyView() {
