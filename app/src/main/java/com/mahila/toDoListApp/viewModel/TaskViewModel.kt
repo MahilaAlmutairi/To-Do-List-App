@@ -2,6 +2,7 @@ package com.mahila.toDoListApp.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.mahila.toDoListApp.model.entity.Task
@@ -46,6 +47,9 @@ class TaskViewModel(context: Application) : AndroidViewModel(context) {
         viewModelScope.launch(Dispatchers.IO) {
             repo.switchCompleteTask(task)
         }
+    }
+    fun findByTitle(searchQuery: String): LiveData<List<Task>> {
+        return repo.findByTitle(searchQuery)
     }
 }
 

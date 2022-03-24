@@ -10,12 +10,12 @@ import java.util.*
 @Entity(tableName = "task_table")
 data class Task(
     @PrimaryKey(autoGenerate = true)
-    val taskId: Int = 0,//------------------**
+    val taskId: Int = 0,
     @ColumnInfo(name = "taskTitle")
     var taskTitle: String,
     @ColumnInfo(name = "taskDueDate")
     var taskDueDate: Date? = null,
-    var taskDueDateAsString: String? =null ,//or open time  ---------------------*
+    var taskDueDateAsString: String? =null ,
     //maybe without descr.
     @ColumnInfo(name = "taskDescription")
     var taskDescription: String? = null,

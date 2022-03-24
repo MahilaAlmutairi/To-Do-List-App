@@ -1,6 +1,7 @@
 package com.mahila.toDoListApp.model.repository
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import com.mahila.toDoListApp.model.database.AppDatabase
 import com.mahila.toDoListApp.model.entity.Task
 import kotlinx.coroutines.Dispatchers
@@ -22,21 +23,21 @@ class Repo(context: Context) {
 
         appDB.taskDao.update(task)
     }
-    suspend fun deleteTask(task: Task){
+
+    suspend fun deleteTask(task: Task)= withContext(Dispatchers.IO) {
         appDB.taskDao.delete(task)
     }
-    suspend fun restoreDeleted(task: Task){
+
+    suspend fun restoreDeleted(task: Task)= withContext(Dispatchers.IO) {
         appDB.taskDao.insert(task)
     }
-    suspend fun switchCompleteTask(task: Task){
-        task.isCompleted=!(task.isCompleted)
-        //when Was boolean
-     /*   task.isCompleted=when(task.isCompleted){
-            "Uncompleted"->"Completed"
-            "Completed"-> "Uncompleted"
-            else -> ""
-        }*/
 
+    suspend fun switchCompleteTask(task: Task) = withContext(Dispatchers.IO){
+        task.isCompleted = !(task.isCompleted)
         appDB.taskDao.update(task)
+    }
+
+    fun findByTitle(searchQuery: String): LiveData<List<Task>> {
+        return appDB.taskDao.findByTitle(searchQuery)
     }
 }

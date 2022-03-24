@@ -7,7 +7,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.mahila.toDoListApp.view.MainFragment">
-
+        <SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/rvRecycleView" />
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addingBtn"
             android:layout_width="wrap_content"
@@ -35,7 +40,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/search"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
